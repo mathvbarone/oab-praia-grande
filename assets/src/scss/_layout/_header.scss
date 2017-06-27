@@ -1,0 +1,97 @@
+//HEADER
+.header-main--content{
+	.link{
+		text-transform:uppercase;
+		&:hover{
+			color:$first-color;
+		}
+	}
+
+	.boxes{
+		.box{
+			margin-top:10px;
+			margin-bottom:10px;
+			transition:linear 0.2s all;
+			text-decoration:none;
+			padding:10px;
+			strong,
+			p{
+				transition:linear 0.2s all;
+				@extend .color-white;
+			}
+			strong{
+				text-transform:uppercase;
+				@include fontSize(18px);
+			}
+			p{
+				display:block;
+				@include fontSize(18px);
+				font-weight:300;
+				@extend .font-second;
+			}
+			.btn-small{
+				display:block;
+				margin-top:5px;
+				padding:0 10px;
+			}
+
+			&:first-child{
+				@extend .bg-second;
+			}
+			&:last-child{
+				@extend .bg-first;
+			}
+			&:hover{
+				box-shadow: 0 0 6px rgba(0, 0, 0, 0.32);
+				transform: scale(1.04);
+				background:none;
+				.btn-small{
+					color:#fff;
+				}
+				&:first-child{
+					strong,
+					p{
+						color:$second-color;
+					}
+					.btn-small{
+						@extend .bg-second;
+					}
+				}
+				&:last-child{
+					strong,
+					p{
+						color:$first-color;
+					}
+					.btn-small{
+						@extend .bg-first;
+					}
+				}	
+			}
+		}
+	}
+
+	.form{
+		padding:5px;
+		>button{
+			@extend .bg-first;
+			color:#fff;
+			padding:5px 10px;
+			border-radius:3px;
+			cursor:pointer;
+			&:hover{
+				@extend .bg-first;
+				color:#fff;
+			}
+		}
+	}
+
+}
+
+
+.header-fixed{
+	width: 100%;
+	position: fixed;
+	z-index: 1000000;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.38);
+}
+// /HEADER

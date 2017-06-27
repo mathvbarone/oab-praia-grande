@@ -1,0 +1,12 @@
+/*RESPONSIVES*/
+    @import '_responsive/_default';
+    @import '_responsive/_classes';
+    
+    //LAYOUT
+    @import '_responsive/_layout/_header';
+    @import '_responsive/_layout/_footer';
+    
+    //CONTENT
+    @import '_responsive/_content/_home';
+    @import '_responsive/_content/_about';
+/* /RESPONSIVES*/

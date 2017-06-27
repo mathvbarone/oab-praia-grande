@@ -1,0 +1,46 @@
+//HOME
+    @mixin home-desktop--lg {
+        .home {
+            &__video {
+                max-width: 100%;
+            }
+        }
+    }
+    @mixin home-desktop--md {
+        .home {
+            &__background {
+                display: none;
+            }
+            
+          //WELCOME
+            .welcome {
+                padding: 120px 0 0px 0;
+                
+                &__title {
+                    line-height: 40px;
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+    @mixin home-mobile--md {
+        //BACKGROUND SLIDER
+        .home {
+            &__video {
+                max-height: 100%;
+            }
+            
+        }
+    }
+    @mixin home-mobile--sm {
+        .home {
+            //WELCOME
+            .welcome {
+                &__title {
+                    font-size: 22px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+// /HOME

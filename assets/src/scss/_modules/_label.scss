@@ -1,0 +1,58 @@
+/*LABEL*/
+    @mixin module-label {
+        .label,
+        [class*="label--"] {
+            @extend .font-first;
+            display: inline;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            font-size: 12px;
+            padding: 3px 10px;
+            margin: 3px 3px 3px 0;
+            
+            &[disabled] {
+                cursor: not-allowed;
+                opacity: .5;
+            }
+            &:not(.label-noradius) {
+                border-radius: 5px;
+            }
+            &.label-gradient {
+                overflow: hidden;
+            }
+            .fa {
+                font-size: 14px;
+                
+                &.fa-right {
+                    margin-left: 5px;
+                }    
+                &.fa-left {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .label {
+            color: #fff;
+            background: $gray-color;
+            
+            &--white {
+                color: gray;
+                background: white;
+            }  
+            //NORMAL
+            @each $type in $type-status {
+                &--#{$type} {
+                    color: #fff;
+                    
+                    &:not(.label-gradient) {
+                        background: nth($color-status, index($type-status, $type));
+                    }
+                    &.label-gradient {
+                        background: linear-gradient(to bottom, nth($color-status, index($type-status, $type)), darken(nth($color-status, index($type-status, $type)), 10%));
+                    }
+                }
+            }
+        }
+    }
+/* /LABEL*/

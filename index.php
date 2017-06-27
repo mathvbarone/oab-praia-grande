@@ -1,0 +1,1 @@
+<?php include 'includes/partial-head.php';?><div class="home-box flex-grid--col halign-right"><header class="header-main header-home"> <?php include 'includes/header-content.php';?></header><main class="main home col"></main><footer class="footer-main footer--home"> <?php include 'includes/footer-content.php';?></footer></div></body></html>

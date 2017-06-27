@@ -1,0 +1,81 @@
+//DEFAULT
+    @mixin default-mobile--sm {
+
+    }
+    
+    //BUTTONS
+    @mixin button-mobile--sm {
+        .btn,
+        [class*="btn--"] {
+            &.btn-small {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            &:not(.btn-small):not(.btn-big) {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+            &.btn-big {
+                padding: 20px 20px;
+                font-size: 18px;
+            }
+        }
+    }
+    
+    //TABLES
+    @mixin table-mobile($width) {
+        .responsive-table {
+            &--#{$width} {
+                width: 100%;
+                border-bottom: 0;
+                
+                .tbody {
+                    border-radius: 5px;
+                }
+                .thead,
+                .th {
+                   display: none; 
+                }
+                .tr {
+                    border-radius: 5px;
+                    overflow: hidden;
+                    display: block;
+                    margin-bottom: 10px;
+                    border: 1px solid $first-color;
+                }
+                .tr:nth-of-type(2n) {
+                    background-color: inherit;
+                }
+                .td:first-child {
+                    background: $first-color;
+                    font-weight: bold;
+                    font-size: 1.3em;
+                    color: #fff;
+                }
+                .td {
+                    display: block;
+                    text-align: right;
+                    
+                    &:not(:first-child) {
+                        border-right: 0;
+                        border-left: 0;
+                    }
+                    &:before { 
+                        content: attr(data-th); 
+                        display: block;
+                        text-align: left;
+                        float: left;
+                        font-weight: bolder;
+                        max-width: 50%;
+                        margin-right: 10px;
+                    }
+                    &:after {
+                        display: block;
+                        content: " ";
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+//DEFAULT

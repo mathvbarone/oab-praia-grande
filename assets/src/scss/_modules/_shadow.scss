@@ -1,0 +1,28 @@
+/*SHADOWS*/
+    @mixin module-shadow {
+        .shadow {
+            &:not([class*="shadow--"]) {
+                box-shadow: 0.1em 0.1em 0.5em 0 rgba(0,0,0,0.1);
+            }
+            &--sides {
+                position: relative;
+                
+                &:before, &:after{
+                  position:absolute;
+                  content:"";
+                  width:45%;
+                  bottom: 20px;
+                  background:transparent;
+                  z-index:-1;
+                  height:10px;
+                  box-shadow: 0 20px 15px gray;
+                  transform: rotate(-2deg);
+                }
+                &:after{
+                  transform: rotate(2deg);
+                  right: 0;
+                }
+            }
+        }
+    }
+/* /SHADOWS*/

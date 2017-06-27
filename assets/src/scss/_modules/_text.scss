@@ -1,0 +1,84 @@
+/*TEXT*/
+@mixin module-text {
+    .text {
+        text-decoration: none;
+
+        &-left {
+            text-align: left;
+        }
+        &-center {
+            text-align: center;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-justify {
+            text-align: justify;
+        }
+        &-underline {
+            text-decoration: underline;
+        }
+        &-nodecoration {
+            text-decoration: none;
+        }
+        &-uppercase{
+            text-transform: uppercase;
+        }
+
+        //RESPONSIVE TEXT
+        @each $tag in $tag-responsive {
+            @media (max-width:nth($width-responsive, index($tag-responsive, $tag))) {
+                &--#{$tag} {
+                    text-align:center;
+                }
+            }
+        }
+    }
+    .font {
+        &-biggest {
+            font-size: 1.250em;
+        }
+        &-big {
+            font-size: 1.125em;
+        }
+        &-normal {
+            font-size: 1em;
+        }
+        &-small {
+            font-size: 0.875em;
+        }
+        &-smaller {
+            font-size: 0.750em;
+        }
+
+        @for $i from 20 through 100 {
+            @if $i % 2 == 0 {
+                &-#{$i},
+                &-#{$i}.fa {
+                    font-size: $i * 1px;
+                }
+            }
+        }
+    }
+    .bold {
+        font-weight: bolder;
+    }
+    .light {
+        font-weight: lighter;
+    }
+    .color {
+        &-white {
+            color: white;
+        }
+            //NORMAL
+            @each $type in $type-status {
+                &-#{$type} {
+                    color: nth($color-status, index($type-status, $type));
+                }
+            }
+        }
+    }
+
+
+
+/* /TEXT*/

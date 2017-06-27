@@ -1,0 +1,115 @@
+/*BUTTONS*/
+    @mixin module-button {
+        .btn,
+        [class*="btn--"] {
+            transition:linear 0.2s all;
+            @extend .font-first;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            
+            &[disabled] {
+                cursor: not-allowed;
+                opacity: .5;
+            }
+            &:not([disabled]) {
+                cursor: pointer;
+            }
+            &.btn-small {
+                @include fontSize(11px);
+            }
+            &:not(.btn-small):not(.btn-big) {
+                padding: 10px 30px;
+                font-size: 14px;
+            }
+            &.btn-big {
+                padding: 15px 40px;
+                font-size: 16px;
+            }
+            &:not(.btn-noradius) {
+                border-radius: 8px;
+            }
+            &:not(.btn-nomargin) {
+                margin-bottom: 10px;
+            }
+            &.btn-paper {
+                &:before,
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+                &:before {
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid rgba(0,0,0,.3);
+                }
+                &:after {
+                    border-top: 10px solid transparent;
+                    border-right: 10px solid #fff;
+                }
+            }
+            &.btn-gradient {
+                overflow: hidden;
+            }
+            .fa {
+                font-size: 18px;
+                
+                &.fa-right {
+                    margin-left: 5px;
+                }    
+                &.fa-left {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .btn {
+            color: #fff;
+            background: $gray-color;
+            
+            &:not([disabled]):hover,
+            &.active,
+            &[data-active="true"] {
+                background: lighten($gray-color, 5%);
+            }
+            
+            &--white {
+                color: gray;
+                background: white;
+                
+                &:not([disabled]):hover,
+                &.active,
+                &[data-active="true"] {
+                    background: lightgray;
+                }
+            }  
+            //NORMAL
+            @each $type in $type-status {
+                &--#{$type} {
+                    color: #fff;
+                    
+                    &:not(.btn-gradient) {
+                        background: nth($color-status, index($type-status, $type));
+                    }
+                    &.btn-gradient {
+                        background: linear-gradient(to bottom, nth($color-status, index($type-status, $type)), darken(nth($color-status, index($type-status, $type)), 10%));
+                    }
+                    
+                    &:not([disabled]):hover,
+                    &.active,
+                    &[data-active="true"] {
+                        &:not(.btn-gradient) {
+                            background: lighten(nth($color-status, index($type-status, $type)), 5%);
+                        }
+                        &.btn-gradient {
+                            background: linear-gradient(to top, nth($color-status, index($type-status, $type)), darken(nth($color-status, index($type-status, $type)), 10%));
+                        }
+                    }
+                }
+            }
+        }
+    }
+/* /BUTTONS*/

@@ -1,0 +1,23 @@
+//HEADER
+@mixin header-mobile--sm {
+	.header-main-logo{
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.header-main--content{
+		.boxes{
+			.box{
+				p{
+					display:none;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+// /HEADER

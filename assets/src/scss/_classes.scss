@@ -1,0 +1,43 @@
+/* CLASSES */
+ 
+    //GO TOP
+        .goTop {
+            @extend .bg-second;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            position: fixed;
+            cursor: pointer;
+            right: 10px;
+            bottom: 10px;
+            z-index: 2;
+            transition: .3s;
+            display:none;
+
+            .fa {
+                @extend .color-white;
+                @extend .font-20;
+            }
+            &:not([data-active="true"]) {
+                display: none;
+            }
+            &:not(:hover) {
+                box-shadow: .1em .1em 1em .1em rgba(0, 0, 0, 0.2);
+                transform: scale(.8);
+                opacity: .5;
+            }
+        }
+    // /GO TOP
+
+    //BOX
+    .box{
+        border:1px solid gainsboro;
+        border-radius:5px;
+    }
+
+
+    // /BOX
+
+
+
+/* /CLASSES */

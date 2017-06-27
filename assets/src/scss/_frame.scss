@@ -1,0 +1,49 @@
+/*
+----------------------------------------------
+Framework Name: Simple Framework
+Framework Url: Creating...
+By: Victor Martins Bicudo
+By Url: https://www.behance.net/victorbicudo
+Description: Framework Simple for KBRTEC
+----------------------------------------------
+*/
+/*ALL COMPONENTS*/
+    @import '_modules/_config';
+    @import '_modules/_font';
+    @import '_modules/_variables';
+    @import '_modules/_reset';
+      @import '_modules/_normalize';
+        @if $reset == true { @include module-reset; }
+    @import '_modules/_shadow';
+        @if $shadow == true { @include module-shadow; }
+    @import '_modules/_img';
+        @if $img == true { @include module-img; }
+    @import '_modules/_label';
+        @if $label == true { @include module-label; }
+    @import '_modules/_alert';
+        @if $alert == true { @include module-alert; }
+    @import '_modules/_animation';
+        @if $animation == true { @include module-animation; }
+    @import '_modules/_background';
+        @if $background == true { @include module-background; }
+    @import '_modules/_button';
+        @if $button == true { @include module-button; }
+    @import '_modules/_form';
+        @if $form == true { @include module-form; }
+    @import '_modules/_link';
+        @if $link == true { @include module-link; }
+    @import '_modules/_notify';
+        @if $notify == true { @include module-notify; }
+    @import '_modules/_text';
+        @if $text == true { @include module-text; }
+    @import '_modules/_display';
+        @if $display == true { @include module-display; }
+    @import '_modules/_margin';
+        @if $margin == true { @include module-margin; }
+    @import '_modules/_padding';
+        @if $padding == true { @include module-padding; }
+    @import '_modules/_grid';
+        @if $grid == true { @include module-grid; }
+    @import '_modules/_responsive';
+        @if $responsive == true { @include module-responsive; }
+/* /ALL COMPONENTS*/

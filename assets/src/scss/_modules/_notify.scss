@@ -1,0 +1,28 @@
+/*NOTIFIES*/
+    @mixin module-notify {
+        .notify,
+        [class*="notify--"] {
+            font-size: 10px;
+            border-radius: 0 0 0 5px;
+            padding: 0 4px 2px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .notify {
+            background: $gray-color;
+            
+            &--white {
+                color: black;
+                background: white;
+            }  
+            
+            @each $type in $type-status {
+                &--#{$type} {
+                    color: #fff;
+                    background: nth($color-status, index($type-status, $type));
+                }
+            }
+        }
+    }
+/* /NOTIFIES*/

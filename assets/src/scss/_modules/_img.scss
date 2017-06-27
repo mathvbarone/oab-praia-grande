@@ -1,0 +1,17 @@
+/*IMAGES*/
+    @mixin module-img {
+        .img {
+            @for $i from 1 through 10 {
+                &-#{$i * 10} {
+                    max-width: $i * 10%;
+                }
+            }
+        }
+        .cover {
+            object-fit: cover;
+        }
+        .img-circle {
+            border-radius: 50%;
+        }
+    }
+/* /IMAGES*/

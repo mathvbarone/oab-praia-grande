@@ -1,0 +1,41 @@
+//GRID
+    $wrapper: 1180; //MAX-WIDTH WRAPPER
+    $grid-columns: 12; //NUMBER OF COLUMNS
+    $tag-responsive: "xs" "sm" "md" "lg" "xl"; //TAGS FOR RESPONSIVE
+    $width-responsive: 368px 568px 768px 1024px 1280px; //WIDTH FOR RESPONSIVE
+
+//COLORS
+    $gray-color: #636363;
+    $lightgray-color: #d4d4d4;
+    $default-color: #909090;
+    $first-color: #aa3337;
+    $second-color: #24547e;
+    $third-color: #2b5aa0;
+    $danger-color: #cc0000;
+    $info-color: #0066be;
+    $success-color: #17a400;
+    $warning-color: #bdbb00;
+    
+//CONFIG COLORS
+    $type-status: "default" "gray" "lightgray" "first" "second" "third" "danger" "info" "success" "warning";
+    $color-status: $default-color $gray-color $lightgray-color $first-color $second-color $third-color $danger-color $info-color $success-color $warning-color;
+    
+
+//REM CONVERSOR    
+    
+ @function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+      
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}  
+
+@mixin lineHeigt($size) {
+  line-height: $size; //Fallback in px
+  line-height: calculateRem($size);
+}   
+    
+    
