@@ -1,5 +1,5 @@
 
-# Template para o inicio do site da OAB Praia Grande
+# Template para o site da OAB Praia Grande
 
 Tecnologias utilizadas:
 
